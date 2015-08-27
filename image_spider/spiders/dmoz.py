@@ -6,13 +6,14 @@ import scrapy
 
 class DmozSpider(scrapy.Spider):
     name = "dmoz"
-    allowed_domains = ["http://www.hexun.com/"]
+    # allowed_domains = ["http://www.hao123.com/"]
     start_urls = [
-        "http://tech.hexun.com/2015-08-26/178619693.html",
+        "http://www.hao123.com/",
     ]
 
     def parse(self, response):
-        filename = response.url.split("/")[-3] + ".html"
+        print response.url
+        filename = response.url.split("/")[-2] + ".html"
         print "has catch", filename
         with open(filename, 'wb') as f:
             f.write(response.body)
