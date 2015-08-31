@@ -5,11 +5,12 @@ import scrapy
 
 
 class DmozSpider(scrapy.Spider):
-    name = "dmoz"
-    # allowed_domains = ["http://www.hao123.com/"]
+    name = "pic"
+    allowed_domains = ['https://www.reddit.com/']
     start_urls = [
-        "http://www.hao123.com/",
+        "https://www.reddit.com/r/pics",
     ]
+
 
     def parse(self, response):
         print response.url
